@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function HomePage() {
   return (
     <main>
-      <div className="text-center p-52">
+      <div className="text-center mt-52">
         <h1 className="font-bold">
           <p className="text-5xl">Hi!</p>
           <p className="text-5xl">Ready To Study?</p>
