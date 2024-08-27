@@ -38,12 +38,12 @@ export default function ConnectPage() {
     return (
         <main className="relative min-h-screen">
             <div className="flex flex-col items-center justify-center min-h-screen">
-                <h1 className="font-bold text-6xl">Connect</h1>
+                <h1 className="font-bold text-5xl">Connecter-vous</h1>
                 <form onSubmit={handleSubmit} className="mt-4 flex items-center">
                     <div className="relative">
                         <input
                             type={showPassword ? 'text' : 'password'}
-                            placeholder="Enter your password"
+                            placeholder="Entrer votre mot de passe"
                             value={password}
                             onChange={handlePasswordChange}
                             className="px-4 py-2 border rounded-md pr-15" // Ajoutez de l'espace à droite pour le bouton
@@ -58,7 +58,7 @@ export default function ConnectPage() {
                         </button>
                     </div>
                     <button type="submit" className="ml-4 px-4 py-2 bg-blue-500 text-white rounded-md">
-                        Login
+                        Se Connecter
                     </button>
                 </form>
                 {error && <p className="mt-2 text-red-500">{error}</p>}

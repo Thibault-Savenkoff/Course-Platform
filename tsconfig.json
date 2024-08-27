@@ -24,6 +24,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/docs/2025/[...slug]/layout.tsx", "app/docs/[[...slug]]/page.tsx.pourlaterminal"],
   "exclude": ["node_modules"]
 }

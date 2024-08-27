@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
-import Link from 'next/link';
+import Link, { type LinkProps } from 'next/link';
 import Image from "next/image";
 
 export default function HomePage() {
@@ -24,17 +24,13 @@ export default function HomePage() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
           <h1 className="font-bold">
-            <p className="text-5xl">Hi!</p>
-            <p className="text-5xl">Ready To Study?</p>
+            <p className="text-5xl">Bonjour !</p>
+            <p className="text-5xl">Prêt à Étudier ?</p>
           </h1>
-          <div className="mt-4">
-            <a
-              href="/login"
-              onClick={handleLoginClick}
-              className="inline-block px-5 py-3 rounded-lg shadow-lg white:bg-slate-300 dark:bg-slate-600"
-            >
-              Login
-            </a>
+          <div className="mt-16 grid grid-cols-1">
+            <Item href="/login" onClick={handleLoginClick}>
+              <h2 className="mt-1 text-2xl font-semibold">Se Connecter</h2>
+            </Item>
           </div>
         </div>
       </div>
@@ -45,7 +41,7 @@ export default function HomePage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <p className="text-pw lg:text-base mr-auto">Powered by</p>
+          <p className="text-xl lg:text-base mr-auto">Fait avec</p>
           <Image
             src="/next.svg"
             alt="Next.js Logo"
@@ -57,5 +53,25 @@ export default function HomePage() {
         </Link>
       </div>
     </main>
+  );
+}
+
+function Item(
+  props: LinkProps & { children: React.ReactNode },
+): React.ReactElement {
+  return (
+    <Link
+      {...props}
+      className="rounded-2xl border border-transparent p-10 shadow-lg transition-all hover:shadow-fd-primary/20"
+      style={{
+        backgroundImage:
+          'linear-gradient(to right bottom, hsl(var(--background)) 10%, hsl(var(--accent)), hsl(var(--background)) 60%),' +
+          'linear-gradient(to right bottom, rgb(40,40,40) 10%, rgb(180,180,180), rgb(30,30,30) 60%)',
+        backgroundOrigin: 'border-box',
+        backgroundClip: 'padding-box, border-box',
+      }}
+    >
+      {props.children}
+    </Link>
   );
 }

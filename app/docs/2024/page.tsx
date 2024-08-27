@@ -4,17 +4,17 @@ export default function DocsPage(): React.ReactElement {
   return (
     <main className="container flex flex-col items-center justify-center min-h-screen text-center">
       <h1 className="mb-4 text-4xl font-semibold md:text-5xl">
-        Pour commencer
+        Année Scolaire 2024-2025
       </h1>
       <p className="text-fd-muted-foreground">
-        Choisissez l’année scolaire.
+        Quel catégorie de cours ?
       </p>
       <div className="mt-16 grid grid-cols-1 gap-16 md:grid-cols-2">
-        <Item href="/docs/2024">
-          <h2 className="mt-1 text-2xl font-semibold">2024-2025</h2>
+        <Item href="/docs/2024/general">
+          <h2 className="mt-1 text-2xl font-semibold">Général</h2>
         </Item>
-        <Item href="/docs/2025">
-          <h2 className="mt-1 text-2xl font-semibold">2025-2026</h2>
+        <Item href="/docs/2024/specialite">
+          <h2 className="mt-1 text-2xl font-semibold">Spécialité</h2>
         </Item>
       </div>
     </main>
