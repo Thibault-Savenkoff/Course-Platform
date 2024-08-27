@@ -17,8 +17,6 @@ export default function ConnectPage() {
         e.preventDefault();
         // Simuler une vérification de mot de passe
         if (password === process.env.NEXT_PUBLIC_PASSWORD) {
-            alert('Connexion réussie !');
-            setError('');
             router.push('/docs');
         } else {
             setError('Mot de passe incorrect');
