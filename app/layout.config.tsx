@@ -5,12 +5,12 @@ import { pageTree } from '@/app/source';
 // shared configuration
 export const baseOptions: HomeLayoutProps = {
   nav: {
-    title: 'My App',
+    title: 'Course Platform',
   },
   links: [
     {
-      text: 'Documentation',
-      url: '/docs',
+      text: 'Logout',
+      url: '/logout',
       active: 'nested-url',
     },
   ],

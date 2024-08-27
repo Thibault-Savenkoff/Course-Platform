@@ -1,7 +1,24 @@
+'use client'
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import Cookies from 'js-cookie';
 import Link from 'next/link';
 import Image from "next/image";
 
 export default function HomePage() {
+  const router = useRouter();
+
+  const handleLoginClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const token = Cookies.get('auth-token');
+    if (token) {
+      router.push('/docs');
+    } else {
+      router.push('/login');
+    }
+  };
+
   return (
     <main className="relative min-h-screen">
       <div className="flex items-center justify-center min-h-screen">
@@ -11,7 +28,13 @@ export default function HomePage() {
             <p className="text-5xl">Ready To Study?</p>
           </h1>
           <div className="mt-4">
-            <a href="/connect" className="inline-block px-5 py-3 rounded-lg shadow-lg white:bg-slate-300 dark:bg-slate-600">Connect</a>
+            <a
+              href="/login"
+              onClick={handleLoginClick}
+              className="inline-block px-5 py-3 rounded-lg shadow-lg white:bg-slate-300 dark:bg-slate-600"
+            >
+              Login
+            </a>
           </div>
         </div>
       </div>
