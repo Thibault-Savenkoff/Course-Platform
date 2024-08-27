@@ -10,13 +10,6 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  // Optionnel : vérifier la validité du token
-  // if (!isValidToken(token)) {
-  //   const url = req.nextUrl.clone();
-  //   url.pathname = '/login';
-  //   return NextResponse.redirect(url);
-  // }
-
   return NextResponse.next();
 }
 
